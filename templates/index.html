@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Medical Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>
+    <span class="heartbeat">❤️</span>
+    AI Medical Assistant
+</h1>
+
+    <p class="subtitle">
+        Educational Healthcare Support Using Gemini AI
+    </p>
+
+    <form method="POST" enctype="multipart/form-data">
+
+        <textarea
+        name="symptoms"
+        placeholder="Describe your symptoms here..."></textarea>
+
+        <br><br>
+
+        <input type="file" name="report">
+
+        <button type="submit">
+            Analyze
+        </button>
+
+    </form>
+
+    {% if result %}
+
+    <div class="response">
+        <h2>🤖 AI Response</h2>
+        <br>
+        {{ result }}
+    </div>
+
+    {% endif %}
+
+    <footer>
+        ⚠ Educational Purposes Only • Not a Medical Diagnosis
+    </footer>
+
+</div>
+<div class="ecg-container">
+    <div class="ecg-line"></div>
+</div>
+</body>
+</html>
